@@ -43,4 +43,41 @@ const posts = [
   },
 ];
 
-module.exports = posts;
+const express = require("express");
+const router = express.Router();
+
+//index (read)
+router.get("/", (req, res) => {
+  res.send("Posts List")
+})
+
+// show (read)
+router.get("/:id", (req, res) => {
+  res.send(`Post of ID n°${req.params.id}`)
+})
+
+//store (create)
+router.post("/", (req, res) => {
+  res.send("Create new Post")
+})
+
+// update (update)
+router.put("/:id", (req, res) => {
+  res.send(`Update the post of ID n°${req.params.id}`)
+})
+
+// edit (update)
+router.patch("/:id", (req, res) => {
+  res.send(`Edit the post of ID n°${req.params.id}`)
+})
+
+// delete (delete)
+router.delete("/:id", (req, res) => {
+  res.send(`Delete the post of ID n°${req.params.id}`)
+})
+
+// export posts and router
+module.exports = {
+  posts,
+  router
+};
