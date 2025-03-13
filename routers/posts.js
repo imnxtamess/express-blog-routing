@@ -53,28 +53,33 @@ router.get("/", (req, res) => {
 })
 
 // show (read)
-router.get("/:id", (req, res) => {
-  res.send(`Post of ID n°${req.params.id}`)
+router.get("/:slug", (req, res) => {
+  posts.find((thisPost) => {
+    if (req.params.slug) {
+      res.json(thisPost)
+    }
+  })
 })
 
 //store (create)
 router.post("/", (req, res) => {
   res.send("Create new Post")
+
 })
 
 // update (update)
-router.put("/:id", (req, res) => {
-  res.send(`Update the post of ID n°${req.params.id}`)
+router.put("/:slug", (req, res) => {
+  res.send(`Update the post of slug n°${req.params.slug}`)
 })
 
 // edit (update)
-router.patch("/:id", (req, res) => {
-  res.send(`Edit the post of ID n°${req.params.id}`)
+router.patch("/:slug", (req, res) => {
+  res.send(`Edit the post of slug n°${req.params.slug}`)
 })
 
 // delete (delete)
-router.delete("/:id", (req, res) => {
-  res.send(`Delete the post of ID n°${req.params.id}`)
+router.delete("/:slug", (req, res) => {
+  res.send(`Delete the post of slug n°${req.params.slug}`)
 })
 
 // export posts and router
