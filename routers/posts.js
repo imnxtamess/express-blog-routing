@@ -49,6 +49,7 @@ const router = express.Router();
 //index (read)
 router.get("/", (req, res) => {
   res.send("Posts List")
+  res.json(posts)
 })
 
 // show (read)

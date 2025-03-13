@@ -10,6 +10,7 @@ const posts = require("./routers/posts")
 
 const postsRouter = posts.router
 
+
 // server starts listening on port 3000
 app.listen(port, () => {
   console.log(`Server is currently running on port http://localhost:${port}`)
@@ -25,3 +26,4 @@ app.get("/", () => {
 // link to the postsRouter routes
 
 app.use("/api/v1/posts", postsRouter)
+
