@@ -69,17 +69,17 @@ router.post("/", (req, res) => {
 
 // update (update)
 router.put("/:slug", (req, res) => {
-  res.send(`Update the post of slug n°${req.params.slug}`)
+  res.send(`Update the post of slug ${req.params.slug}`)
 })
 
 // edit (update)
 router.patch("/:slug", (req, res) => {
-  res.send(`Edit the post of slug n°${req.params.slug}`)
+  res.send(`Edit the post of slug ${req.params.slug}`)
 })
 
 // delete (delete)
 router.delete("/:slug", (req, res) => {
-  res.send(`Delete the post of slug n°${req.params.slug}`)
+  res.send(`Delete the post of slug ${req.params.slug}`)
 })
 
 // export posts and router
