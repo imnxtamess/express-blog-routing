@@ -55,7 +55,7 @@ router.get("/", (req, res) => {
 // show (read)
 router.get("/:slug", (req, res) => {
   posts.find((thisPost) => {
-    if (req.params.slug) {
+    if (req.params.slug === thisPost.slug) {
       res.json(thisPost)
     }
   })
